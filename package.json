@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-complete-guide",
+  "version": "1.0.0",
+  "description": "Complete Node.js Guide - Udemy Certification",
+  "license": "ISC",
+  "author": "William Chan",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-handlebars": "3.0",
+    "hbs": "^4.3.1",
+    "pug": "^3.0.4"
+  }
+}
