@@ -19,7 +19,7 @@ exports.getProducts = (req, res, next) => {
 }
 
 exports.getIndex = (req, res, next) => {
-		const products = Product.fetchAll(
+	const products = Product.fetchAll(
 		(products) => {
 			res.render(
 				'shop/index.ejs',
@@ -42,6 +42,18 @@ exports.getCart = (req, res, next) => {
 		{
 			pageTitle: "Your Cart",
 			path: "/shop/cart",
+			productCSS: true,
+			activeShop: true
+		}
+	);
+}
+
+exports.getOrders = (req, res, next) => {
+	res.render(
+		'shop/orders.ejs',
+		{
+			pageTitle: "Your Orders",
+			path: "/shop/orders",
 			productCSS: true,
 			activeShop: true
 		}

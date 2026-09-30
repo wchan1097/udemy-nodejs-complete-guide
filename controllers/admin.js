@@ -20,19 +20,22 @@ exports.postAddProduct = (req, res, next) => {
 	const description = req.body.description;
 	
 	const product = new Product(title, imageUrl, price, description);
-	
+
 	product.save(); 
 	res.redirect('/');
 }
 
 exports.getProducts = (req, res, next) => {
-	res.render(
-		'admin/products.ejs',
-		{
-			pageTitle: "Checkout",
-			path: "/admin/products",
-			productCSS: true,
-			activeShop: true
-		}
-	);
+	const products = Product.fetchAll((products) => {
+		res.render(
+			'admin/products.ejs',
+			{
+				pageTitle: "Checkout",
+				path: "/admin/products",
+				prods: products,
+				productCSS: true,
+				activeShop: true
+			}
+		);
+	});
 }
